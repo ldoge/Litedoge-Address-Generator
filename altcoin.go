@@ -8,5 +8,5 @@ type Altcoin struct {
 }
 
 var altcoins = []Altcoin{
-	{"LiteDoge", 0x5a, 0xab, -1},
+	{"LiteDoge", 0x5a, 0xab, -1}
 }

@@ -32,7 +32,7 @@ func genCoin(pk *btcec.PrivateKey, PubKeyHashAddrID, PrivateKeyID byte, name str
 
 func genEth(privkey *btcec.PrivateKey) {
 	address := crypto.PubkeyToAddress(privkey.PublicKey)
-	fmt.Fprintf(tw, "%s\t%s\t%s\n", "Ethereum", address.String(), hex.EncodeToString(crypto.FromECDSA(privkey.ToECDSA())))
+	fmt.Fprintf(tw, "%s\t%s\t%s\n", "LiteDoge", address.String(), hex.EncodeToString(crypto.FromECDSA(privkey.ToECDSA())))
 }
 
 type Address struct {
@@ -286,9 +286,7 @@ func main() {
 			// create a litecoin account with 20 receive addresses.
 			// pass the bip39 seed key because we create a new master in the bip44 function (redundant)
 			wallet.Accounts = append(wallet.Accounts, bip44("Bitcoin", addrcount, pkb))
-			wallet.Accounts = append(wallet.Accounts, bip44("Litecoin", addrcount, pkb))
-			wallet.Accounts = append(wallet.Accounts, bip44("Ether", addrcount, pkb))
-			wallet.Accounts = append(wallet.Accounts, bip44("Dash", addrcount, pkb))
+			wallet.Accounts = append(wallet.Accounts, bip44("LiteDoge", addrcount, pkb))
 
 			fmt.Println()
 			// print out our wallet
